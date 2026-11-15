@@ -3,333 +3,381 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>💚 for kim · brosis</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>for madam ganda ♡</title>
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      background: #f8dce5;
+    }
+
     body {
-      font-family: 'Quicksand', sans-serif;
-      background: #0f2b1a;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      transition: background 0.3s ease;
+      margin: 0;
+      padding: 0;
+      background: #f8dce5;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .page {
-      background: rgba(255, 255, 245, 0.9);
-      backdrop-filter: blur(4px);
-      width: 100%;
-      max-width: 780px;
-      padding: 2.5rem 2.8rem;
-      border-radius: 56px 24px 56px 24px;
-      box-shadow: 0 30px 50px rgba(0, 20, 0, 0.6), 0 0 0 1px rgba(100, 200, 130, 0.2);
-      transition: opacity 0.6s ease, transform 0.5s ease;
-      border: 1px solid rgba(120, 200, 140, 0.25);
+      --unit: min(100vw, 736px);
       position: relative;
+      width: min(100%, 736px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 25px 35px 35px;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        radial-gradient(ellipse at 15% 35%, #fff1f5 0%, transparent 35%),
+        radial-gradient(ellipse at 90% 75%, #f5b8cb 0%, transparent 35%),
+        repeating-linear-gradient(
+          45deg,
+          rgba(255,255,255,.12) 0px,
+          rgba(255,255,255,.12) 2px,
+          transparent 2px,
+          transparent 12px
+        ),
+        linear-gradient(145deg, #f8c8d8, #fce7ed 48%, #f4bfd0);
+      border: 9px solid #fff0f4;
+      box-shadow: 0 0 25px rgba(135, 66, 91, .15);
     }
 
-    .hidden-page {
-      display: none;
-      opacity: 0;
-      transform: scale(0.96);
-    }
-    .visible-page {
-      display: block;
-      opacity: 1;
-      transform: scale(1);
-    }
+    /* decorative background */
 
-    {
-      text-align: center;
-      padding: 3.5rem 2rem;
-      background: rgba(240, 255, 240, 0.85);
-      backdrop-filter: blur(6px);
-      border-radius: 80px 20px 80px 20px;
-    }
-
-    .click-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.8rem;
-    }
-
-    .click-card h1 {
-      font-size: 2.6rem;
-      font-weight: 300;
-      letter-spacing: 4px;
-      color: #1f4d2b;
-      text-shadow: 0 0 6px rgba(80, 180, 100, 0.2);
-      border-bottom: 2px dashed #3d8b4e;
-      padding-bottom: 0.6rem;
-      display: inline-block;
-    }
-
-    .click-card .sub {
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: #2a5f33;
-      background: rgba(100, 180, 120, 0.1);
-      padding: 0.2rem 2rem;
-      border-radius: 60px;
-      backdrop-filter: blur(2px);
-    }
-
-    .btn-open {
-      background: #1e5a2c;
-      border: none;
-      padding: 1.2rem 3.4rem;
-      border-radius: 120px;
-      font-size: 1.7rem;
-      font-weight: 600;
-      color: #f0fff0;
-      cursor: pointer;
-      box-shadow: 0 12px 20px -8px rgba(20, 70, 30, 0.6);
-      transition: all 0.25s ease;
-      letter-spacing: 2px;
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(200, 255, 200, 0.4);
-      font-family: 'Quicksand', sans-serif;
-    }
-
-    .btn-open:hover {
-      background: #2d7a40;
-      transform: scale(1.03);
-      box-shadow: 0 18px 28px -8px #0f3a1a;
-      border-color: #a8f0b0;
-      color: #ffffff;
-    }
-
-    .btn-open:active {
-      transform: scale(0.95);
-    }
-
-    .leaf-icon {
-      font-size: 2.8rem;
-      opacity: 0.6;
-      margin: 0.2rem 0;
-      filter: drop-shadow(0 0 6px #3d8b4e);
-    }
-
-    {
-      background: rgba(250, 255, 245, 0.92);
-      backdrop-filter: blur(6px);
-      padding: 2.5rem 2.8rem;
-      border-radius: 48px 16px 48px 16px;
-      border-left: 8px solid #357a44;
-      box-shadow: 0 20px 40px rgba(0, 30, 0, 0.5);
-    }
-
-    .letter-container {
-      max-height: 580px;
-      overflow-y: auto;
-      padding-right: 6px;
-      scroll-behavior: smooth;
-    }
-
-    .letter-container::-webkit-scrollbar {
-      width: 5px;
-    }
-    .letter-container::-webkit-scrollbar-track {
-      background: rgba(50, 110, 60, 0.1);
-      border-radius: 20px;
-    }
-    .letter-container::-webkit-scrollbar-thumb {
-      background: #387a47;
-      border-radius: 20px;
-    }
-
-    #typewriter {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #1b3a23;
-      font-weight: 400;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-family: 'Quicksand', sans-serif;
-      padding: 0.2rem 0.2rem 0.2rem 0.2rem;
-    }
-
-    .signature-line {
-      margin-top: 2rem;
-      text-align: right;
-      font-weight: 600;
-      color: #1c5329;
-      letter-spacing: 1px;
-      border-top: 2px dotted #6aa37b;
-      padding-top: 1rem;
-      font-size: 1.1rem;
-      opacity: 0.8;
-    }
-
-    .music-note {
+    .page::before {
+      content: "";
       position: absolute;
-      bottom: 12px;
-      right: 24px;
-      font-size: 1.8rem;
-      opacity: 0.2;
-      color: #1a4d27;
+      inset: 12px;
+      z-index: -1;
+      border: 2px dashed rgba(194, 100, 133, .35);
+      border-radius: 18px;
       pointer-events: none;
     }
 
-    @media (max-width: 550px) {
+    .page::after {
+      content: "♡";
+      position: absolute;
+      right: 25px;
+      top: 255px;
+      color: rgba(190, 91, 130, .35);
+      font-size: 75px;
+      transform: rotate(15deg);
+      z-index: -1;
+    }
+
+    /* header */
+
+    .top-section {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 245px;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    .photo-frame {
+      flex: 0 0 32%;
+      aspect-ratio: 1;
+      padding: 7px;
+      border-radius: 50%;
+      background: #fff7f8;
+      border: 3px solid #d98aa7;
+      box-shadow: 0 7px 18px rgba(130, 62, 88, .2);
+      transform: rotate(-4deg);
+    }
+
+    .photo-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 2px solid #f1c2d1;
+    }
+
+    .heading {
+      flex: 1;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .small-heart {
+      color: #c86d91;
+      font-size: 22px;
+      letter-spacing: 8px;
+    }
+
+    .heading h1,
+    .heading h2 {
+      margin: 0;
+      color: #bd6688;
+      font-family: 'Alex Brush', cursive;
+      font-weight: 400;
+    }
+
+    .heading h1 {
+      font-size: clamp(32px, 7.2vw, 53px);
+      line-height: 1.15;
+    }
+
+    .heading h2 {
+      font-size: clamp(27px, 6vw, 44px);
+      line-height: 1.1;
+    }
+
+    .underline {
+      width: 75%;
+      height: 4px;
+      margin: 12px auto 0;
+      border-radius: 50%;
+      background: #d987a5;
+      transform: rotate(-2deg);
+    }
+
+    /* letter panels */
+
+    .letter {
+      position: relative;
+      z-index: 2;
+      padding: 25px 30px;
+      margin-bottom: 25px;
+      background:
+        radial-gradient(ellipse at top left, rgba(255,255,255,.8), transparent 65%),
+        #fff6e9;
+      border: 2px solid #fff;
+      border-radius: 18px 12px 22px 14px;
+      outline: 2px dashed rgba(208, 126, 151, .55);
+      outline-offset: -10px;
+      box-shadow: 0 7px 15px rgba(124, 68, 84, .13);
+    }
+
+    .letter p {
+      margin: 0;
+      color: #422c35;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 400;
+      text-align: left;
+      overflow-wrap: break-word;
+    }
+
+    .first,
+    .second {
+      min-height: unset;
+    }
+
+    /* decorations */
+
+    .decor {
+      position: absolute;
+      z-index: 1;
+      color: #c66f91;
+      pointer-events: none;
+    }
+
+    .decor-one {
+      top: 280px;
+      left: 15px;
+      font-size: 48px;
+      transform: rotate(-15deg);
+    }
+
+    .decor-two {
+      top: 730px;
+      right: 15px;
+      font-size: 55px;
+      opacity: .65;
+    }
+
+    .decor-three {
+      bottom: 65px;
+      left: 15px;
+      font-size: 55px;
+      transform: rotate(15deg);
+    }
+
+    .decor-four {
+      top: 220px;
+      right: 90px;
+      font-size: 28px;
+    }
+
+    .sticker {
+      position: absolute;
+      z-index: 3;
+      color: #c66f91;
+      pointer-events: none;
+    }
+
+    .sticker-one {
+      top: 215px;
+      right: 20px;
+      font-size: 48px;
+      transform: rotate(15deg);
+    }
+
+    .sticker-two {
+      bottom: 35px;
+      right: 25px;
+      font-size: 45px;
+    }
+
+    /* closing message */
+
+    .closing-message {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #bd6688;
+      font-family: 'Alex Brush', cursive;
+      font-size: clamp(30px, 7vw, 42px);
+      line-height: 1.35;
+      padding: 10px 0 15px;
+      margin-top: 5px;
+    }
+
+    /* mobile adjustments */
+
+    @media (max-width: 500px) {
       .page {
-        padding: 1.8rem 1.2rem;
+        min-height: 100vh;
+        padding: 15px 17px 25px;
+        border-width: 5px;
       }
-      #page2 {
-        padding: 1.8rem 1.2rem;
-      }
-      .click-card h1 {
-        font-size: 2rem;
-      }
-      .btn-open {
-        padding: 1rem 2.2rem;
-        font-size: 1.4rem;
-      }
-      #typewriter {
-        font-size: 1rem;
-        line-height: 1.7;
-      }
-    }
 
-    .glow-text {
-      color: #1d562b;
-      font-weight: 300;
-    }
+      .top-section {
+        min-height: 180px;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
 
-    .footer-note {
-      font-size: 0.75rem;
-      color: #3b6f47;
-      margin-top: 1rem;
-      opacity: 0.4;
-      letter-spacing: 2px;
+      .photo-frame {
+        flex-basis: 34%;
+        padding: 4px;
+      }
+
+      .heading h1 {
+        font-size: clamp(25px, 7vw, 35px);
+      }
+
+      .heading h2 {
+        font-size: clamp(22px, 6vw, 31px);
+      }
+
+      .small-heart {
+        font-size: 16px;
+        letter-spacing: 4px;
+      }
+
+      .letter {
+        padding: 25px 21px;
+        margin-bottom: 20px;
+        border-radius: 14px;
+      }
+
+      .letter p {
+        font-size: clamp(12px, 2.8vw, 13px);
+        line-height: 1.55;
+      }
+
+      .first,
+      .second {
+        min-height: unset;
+      }
+
+      .sticker-one {
+        top: 160px;
+        font-size: 32px;
+      }
+
+      .closing-message {
+        font-size: clamp(29px, 7vw, 36px);
+        padding-bottom: 10px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <audio id="bgMusic" loop preload="auto">
-    <source src="https://audio.jukehost.co.uk/5f8cf408-40b0-11f1-a012-fa163edb0845" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-  <div id="page1" class="page visible-page">
-    <div class="click-card">
-      <div class="leaf-icon">🌿</div>
-      <h1>💚 click to view</h1>
-      <div class="sub">a letter for you, kim</div>
-      <button class="btn-open" id="openLetterBtn">🌸 open letter</button>
-      <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #2c6b3a; opacity: 0.7;">· brosis ·</div>
+
+<main class="page">
+
+  <div class="decor decor-one">♡</div>
+  <div class="decor decor-two">✿</div>
+  <div class="decor decor-three">♡</div>
+  <div class="decor decor-four">✧</div>
+
+  <div class="top-section">
+    <div class="photo-frame">
+      <img
+        src="https://i.ibb.co/pBzWZp4f/Picsart-26-11-15-23-26-37-199.jpg"
+        alt="our photo"
+      >
     </div>
-    <div class="music-note">🎵</div>
-  </div>
-  <div id="page2" class="page hidden-page">
-    <div class="letter-container">
-      <div id="typewriter"></div>
-      <div class="signature-line">— always, your brosis 💚</div>
+
+    <div class="heading">
+      <span class="small-heart">♡ ✧ ♡</span>
+      <h1>hi, madam ganda.</h1>
+      <h2>it’s your tomboy here.</h2>
+      <div class="underline"></div>
     </div>
-    <div class="footer-note">✦ with love ✦</div>
-    <div class="music-note">🎶</div>
   </div>
 
-  <script>
-    (function() {
-      "use strict";
-      const page1 = document.getElementById('page1');
-      const page2 = document.getElementById('page2');
-      const openBtn = document.getElementById('openLetterBtn');
-      const typewriterEl = document.getElementById('typewriter');
-      const fullLetter = `hello, kim. it's your brosis here.
+  <div class="sticker sticker-one">🎀</div>
+  <div class="sticker sticker-two">♡</div>
 
-first of all, I just want to thank you for being there when I needed you the most—when I needed someone to lean on. you healed a version of me that no one else could. I truly appreciate your existence in my life. I'm so thankful to have you in this world full of challenges and circumstances. I hope you know that your existence means so much to me. thank you for always guiding me and leading me to the right path. I value you more than money could ever buy.
+  <section class="letter first">
+    <p>uhm, first I just want to say thankyou for being in my life. you’re the greatest gift I could ask for. I appreciate you a lot, your existence means a lot to me. words are not enough the express how grateful I am to have you in this journey. to have you in my life. you bought happiness in my life that no one could do. lei, all I can say is thank you for everything. I really appreciate all of those things for me, and that literally melts my heart. thankyou for always putting efforts to me, for always playing with me even though we always lose the game. and especially thankyou for choosing me over something that is really important to you. I promise to you to do all my best to give you the love you’re giving to me. I will reciprocate those efforts, genuine love, because that’s what you deserve. you deserve to be treated like a diamond to be kept forever. to be valued forever. I will love you through your perfection and imperfections. I will love all yours flaws, your insecurities, and anything that makes you ask your value. so please don’t hesitate to lean on me when everything feels so cruel. you may run on me whenever you feel the world is against to you. yap on me, disturb me, rant on me. I will listen to all of those without any hesitations and I will promise to welcome you with an open arms.</p>
+  </section>
 
-thank you for always reminding me to take care of myself and for always checking if I am okay. you make me feel like I can always be vulnerable with you. I can cry in front of you and even be a crybaby around you without being judged. you make me feel like I don't have to carry all my problems on my own. you remind me that it's okay to cry sometimes and to be weak sometimes. we're only human—we have emotions and feelings. you became my comfort person. you've helped me more than you know, even though you're fighting your own personal battles too.
+  <section class="letter second">
+    <p>I know we are too young for this, but one thing I’m sure of is how I feel towards you. I want to build my teenage life with you in it if you will let me. I know a lot of people say teenage love doesn't last forever, but I hope we do. and because we are too young, I just want to say that I don’t rush things between us. let's take it one by one. step by step. prioritize your dreams without getting rush. no rush at all. I want us to help each other to become the best versions of ourselves. the version of us that we couldn't ask for more. I hope we achieved the life we’ve always asked for. and I hope when it comes, we are still by each other's side. lei, I know this might be early than you expected, but I wanted to ask if I can court you. I’m courting you not just because I love you. love is important, yes. but what I feel for you goes beyond that. and I wan’t you to know that I’m doing this without any expectations in return. you are the risk that I'm willing to take to. without any regrets. there’s something to you about you that makes me want to dive in. even though I don't know how deep it is, or I will be drowned in the end. I’d rather face the uncertainty than live forever with regrets of never trying. I'd rather risk the fall than spend my days wondering what could have been. and whatever the result is, it’s a risk I'll always be willing to take. other's may admire you for your appearance, but my feelings for yoy reach far beyond what the eyes can see. I love you for who you are.</p>
+  </section>
 
-but at the same time, I hope you learn to value yourself the same way I deeply value you. take care of yourself, prioritize your well-being, and be gentle with yourself. you're doing the best you can, and I see all your hard work. I truly hope that all your hard work pays off. I celebrate every achievement you make, whether it's a small win or a big one. I'm so proud of you for simply being you.
+  <div class="closing-message">
+    mahal na mahal kita, lei ko.<br>
+    higit pa sa sobra :)
+  </div>
 
-that's why I hope you never, ever think that there's no one for you or that no one is proud of you—because I always am. and just like you always tell me, I hope you know that you can be a crybaby to me too. don't ever think that you're a burden to me, because you never have been. you can always be vulnerable with me too.
+</main>
 
-most of all, you don't have to carry all the problems and circumstances that the world throws at you alone. you will always have me by your side, and we will always have each other's backs whenever the world becomes cruel to us. we'll lean on each other, rest when we need to, and continue moving forward together.
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://audio.jukehost.co.uk/01a1e07a-c59d-7242-84cd-cf5de77d0542" type="audio/mpeg">
+</audio>
 
-learn to take a break whenever you're tired. I hope you always stay healthy and happy because you deserve nothing less. you deserve all the genuine things this world has to offer. always stay happy because that's what your brosis always wants to see, okay?
+<script>
+  const music = document.getElementById("bgMusic");
 
-galingan mo palagi. I'm always here for you. it may not always be in person, but my presence and support will always be with you.`;
-      let typingTimer = null;
-      let isTyping = false;
-      let currentCharIndex = 0;
-      const typingSpeed = 50;
-      function typeLetter() {
-        if (isTyping) return;
-        if (currentCharIndex >= fullLetter.length) {
-          return;
-        }
+  music.volume = 0.5;
 
-        isTyping = true;
-        if (typingTimer) {
-          clearInterval(typingTimer);
-          typingTimer = null;
-        }
-
-        typingTimer = setInterval(function() {
-          if (currentCharIndex < fullLetter.length) {
-            typewriterEl.textContent += fullLetter.charAt(currentCharIndex);
-            currentCharIndex++;
-            const container = document.querySelector('.letter-container');
-            if (container) {
-              container.scrollTop = container.scrollHeight;
-            }
-          } else {
-            clearInterval(typingTimer);
-            typingTimer = null;
-            isTyping = false;
-          }
-        }, typingSpeed);
-      }
-
-      function resetAndStartTyping() {
-        if (typingTimer) {
-          clearInterval(typingTimer);
-          typingTimer = null;
-        }
-        isTyping = false;
-        currentCharIndex = 0;
-        typewriterEl.textContent = '';
-        typeLetter();
-      }
-      function goToLetterPage() {
-        page1.classList.remove('visible-page');
-        page1.classList.add('hidden-page');
-        page2.classList.remove('hidden-page');
-        page2.classList.add('visible-page');
-
-        setTimeout(function() {
-          resetAndStartTyping();
-        }, 300);
-        const audio = document.getElementById('bgMusic');
-        if (audio) {
-          audio.play().catch(function(e) {
-            console.log('Music autoplay blocked. Click allowed.', e);
-          });
-        }
-      }
-      openBtn.addEventListener('click', function(e) {
-        goToLetterPage();
+  function startMusic() {
+    if (music.paused) {
+      music.play().then(() => {
+        document.removeEventListener("click", startMusic);
+        document.removeEventListener("touchstart", startMusic);
+        document.removeEventListener("keydown", startMusic);
+      }).catch(error => {
+        console.log("Music playback failed:", error);
       });
-      window.addEventListener('load', function() {
-        const audio = document.getElementById('bgMusic');
-        if (audio) {
-          audio.play().catch(() => {});
-        }
-      });
-    })();
-  </script>
+    }
+  }
+
+  window.addEventListener("load", () => {
+    startMusic();
+  });
+
+  document.addEventListener("click", startMusic);
+  document.addEventListener("touchstart", startMusic);
+  document.addEventListener("keydown", startMusic);
+</script>
+
 </body>
 </html>
