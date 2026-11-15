@@ -343,7 +343,7 @@
   </section>
 
   <div class="closing-message">
-    mahal na mahal kita, lei ko.<br>
+    mahal na mahal kita, elizah.<br>
     higit pa sa sobra :)
   </div>
 
